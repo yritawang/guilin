@@ -467,11 +467,11 @@ body.poem2-active .poem-line {
 }
 
 .nav-arrow.left {
-  left: calc(25% - 40px);
+  left: calc(1%);
 }
 
 .nav-arrow.right {
-  right: calc(25% - 40px);
+  right: calc(1%);
 }
 
 /* Show arrows on side hover */
