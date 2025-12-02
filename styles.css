@@ -438,10 +438,10 @@ body.poem2-active .poem-line {
 }
 
 /* Navigation Arrows - Hidden by default, show on hover */
+/* Navigation Arrows - Always visible at bottom right of sections */
 .nav-arrow {
   position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: 100px;
   width: 60px;
   height: 60px;
   background: transparent;
@@ -452,8 +452,12 @@ body.poem2-active .poem-line {
   cursor: pointer;
   transition: all 0.3s ease;
   z-index: 100;
-  opacity: 0;
-  pointer-events: none;
+  opacity: 0.5;
+  pointer-events: auto;
+}
+
+.nav-arrow:hover {
+  opacity: 1;
 }
 
 .nav-arrow.disabled {
@@ -463,11 +467,11 @@ body.poem2-active .poem-line {
 }
 
 .nav-arrow.left {
-  left: 20px;
+  left: calc(25% - 40px);
 }
 
 .nav-arrow.right {
-  right: 20px;
+  right: calc(25% - 40px);
 }
 
 /* Show arrows on side hover */
