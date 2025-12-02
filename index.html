@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Poetry</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="intro-page" id="introPage">
+    <h1 class="intro-title">[] at Guilin</h1>
+    <div class="image-stack" id="imageStack">
+    </div>
+    <p class="intro-prompt">Click to begin</p>
+  </div>
+
+  <div class="main-content" id="mainContent" style="display: none;">
+    <nav>
+      <div class="nav-title">[] at Guilin</div>
+      <div class="poem-buttons">
+        <button class="poem-button active" id="poem1Btn" data-poem="1">Looking</button>
+        <button class="poem-button" id="poem2Btn" data-poem="2">Remembering</button>
+        <button class="about-button" id="aboutBtn">
+          <svg class="fan-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="fanGradient" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#F5AB2A;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#0D5AC0;stop-opacity:1" />
+          </radialGradient>
+        </defs>
+        <!-- 7 petals radiating from center -->
+        <ellipse cx="50" cy="30" rx="12" ry="22" fill="url(#fanGradient)" opacity="0.9"/>
+        <ellipse cx="50" cy="30" rx="12" ry="22" fill="url(#fanGradient)" opacity="0.85" transform="rotate(51.43 50 50)"/>
+        <ellipse cx="50" cy="30" rx="12" ry="22" fill="url(#fanGradient)" opacity="0.8" transform="rotate(102.86 50 50)"/>
+        <ellipse cx="50" cy="30" rx="12" ry="22" fill="url(#fanGradient)" opacity="0.75" transform="rotate(154.29 50 50)"/>
+        <ellipse cx="50" cy="30" rx="12" ry="22" fill="url(#fanGradient)" opacity="0.8" transform="rotate(205.71 50 50)"/>
+        <ellipse cx="50" cy="30" rx="12" ry="22" fill="url(#fanGradient)" opacity="0.85" transform="rotate(257.14 50 50)"/>
+        <ellipse cx="50" cy="30" rx="12" ry="22" fill="url(#fanGradient)" opacity="0.9" transform="rotate(308.57 50 50)"/>
+        <!-- Center circle -->
+        <circle cx="50" cy="50" r="8" fill="url(#fanGradient)"/>
+      </svg>
+        </button>
+      </div>
+    </nav>
+
+    <div class="about-overlay" id="aboutOverlay">
+      <div class="about-content">
+        <button class="close-button" id="closeAbout">&times;</button>
+        <div class="about-images">
+          <img src="images/about1.jpg" alt="About 1" class="about-image">
+          <img src="images/about2.jpg" alt="About 2" class="about-image">
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="section" data-section="left">
+        <div class="card-container">
+          <div class="card" data-card="left">
+            <div class="card-face card-front">
+              <img class="card-image" src="" alt="Photo">
+            </div>
+            <div class="card-face card-back">
+              <p class="poem-line"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" data-section="right">
+        <div class="card-container">
+          <div class="card" data-card="right">
+            <div class="card-face card-front">
+              <img class="card-image" src="" alt="Photo">
+            </div>
+            <div class="card-face card-back">
+              <p class="poem-line"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-arrow left" id="prevBtn">
+      <div class="arrow-icon left"></div>
+    </div>
+
+    <div class="nav-arrow right" id="nextBtn">
+      <div class="arrow-icon right"></div>
+    </div>
+
+    <div class="page-indicator" id="pageIndicator">1 / 9</div>
+
+    <div class="poem-progress" id="poemProgress">
+      <div class="progress-title">Collected Lines</div>
+      <div class="collected-lines" id="collectedLines"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
