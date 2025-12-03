@@ -32,13 +32,13 @@ const images = [
 const poem1 = [
   'I\'ve been looking at photos of Guilin',
   'I found them when I scrolled through my feed.\nThey are from 2009.',
-  'I think it was because I was looking for photos of a 2000s Guangzhou* \n*My hometown.',
-  'Since I left at 8, I don’t really remember what my Guangzhou looked like.',
+  'I think it was because I was looking for photos of 2000s Guangzhou* \n*My hometown.',
+  'Since I left at 5, I don’t really remember what my Guangzhou looked like.',
   'But I don’t like looking at photos of Guilin.',  
   'I’m not sure why, The two cities look pretty similar during this time. \nThe train station, the mall, the McDonald’s. \nBut the similarity is what throws me off.',
   'I think that’s because I know that’s what he saw',
   'So I try looking for photos of Guangzhou,',
-  'And I try to find \n*in the billboards \n*in the faces of locals *in the bags of shoppers \n*in the tint of the taxis \n*in the smiles of children \n*in the design of the road signs',
+  'And I try to find \n*in the billboards \n*in the faces of locals \n*in the bags of shoppers \n*in the tint of the taxis \n*in the smiles of children \n*in the design of the road signs',
   'What did   he see   that made him   want to   leave?',
   'The apartments reminds me of the calligraphy classes I took when I was 7. \nThe malls rekindle memories of excited Saturdays spent wandering the aisles.',
   'It makes me think that he must not have loved them with me. \nThat when he dropped me off at my classes, held my hand while walking the stores. \nIt must not have been enough.',
@@ -46,7 +46,7 @@ const poem1 = [
   'That means the reason he left was because of something else* \n*Because of escaping escalating responsibilities \n*Because of dissatisfaction \n*Because of–',
   'I hated when he came back. \nBecause he never explained to me why he left.',
   'And now I’m here, looking at these photos.',
-  'I went back to Guilin in August. The city draped its humidity over me and slowly pierced my skin, drawing blood.',
+  'I went back to Guilin last August. \nThe city draped its humidity over me and slowly pierced my skin, drawing blood.',
   'I don’t wish to go back',
 ];
 
@@ -57,14 +57,14 @@ const poem1 = [
 // So poem2[0] will appear with images[17], poem2[1] with images[16], etc.
 const poem2 = [
   'there is a silent sacrilegious assailment these states have set up on me',
-  'I always must wonder', 
+  ' always must wonder', 
   'where am I supposed to be?',
-  'when I return to my motherland \nwhen I see the hotel that my parents met \nwhen I see the apartment my parents bought when they were newly weds \nwhen I eat the food of their city \nwhen I see the village that should have raised me', 
+  'when I return to my motherland \nwhen I see the hotel that my parents met in\nwhen I see the apartment my parents bought when they were newlyweds\nwhen I eat the food of their city\nwhen I see the village that should have raised me', 
   'anemoia',
   'why did you come here?',
-  'my parents did not come to this educated \nthey did not come young and childless \nmy mom followed my father into this country in 2001,',
+  'my parents did not come to this educated\nthey did not come young and childless\nmy mom followed my father into this country in 2001,',
   'how did you feel?', 
-  'coming from a city where your mother was once the mayor/chancellor/chief \nwhere you were able to afford a western car, a japanese watch, in a city without \nindustry, untouched by the impieties of a merchant class \nwhere there was a village to ease the perilous monotony of parenting', 
+  'coming from a city where your mother was once the mayor\nwhere you were able to afford a western car, a japanese watch, in a city without\nindustry, untouched by the impieties of a merchant class\nwhere there was a village to ease the perilous monotony of parenting', 
   'what were u searching for?',
   'what were u running from?',
   'perhaps I am the answer, perhaps not.', 
@@ -72,7 +72,7 @@ const poem2 = [
   'i was still 2 years away when my grandfather, my mother’s father, died and she could not go back to visit ', 
   'i was still 4 years away when they first came, 4 years spent away from their daughter, who about her mom and dad must have wondered', 
   'what are you searching for and how could you and why are you gone and where did you go?',
-  'when I visit Guilin, \nthis beautiful eastern city, \nthe only city that has ever felt like home, \na city that feels so calm, \nso full, so happy to me',
+  'when I visit Guilin, \nthis beautiful eastern city, \nthe only city that has ever felt like home,\na city that feels so calm, \nso full, so happy to me',
   'i feel it all.' 
 ];
 
