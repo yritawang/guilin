@@ -1,9 +1,4 @@
 // script.js
-
-// ============================================
-// REPLACE YOUR IMAGES HERE (18 images total)
-// ============================================
-// Add your image file paths or URLs in order
 const images = [
   'images/image1.jpg',
   'images/image2.jpg',
@@ -24,11 +19,6 @@ const images = [
   'images/image17.jpg',
   'images/image18.jpg', 
 ];
-
-// ============================================
-// REPLACE POEM 1 HERE (18 lines total)
-// ============================================
-// Each line corresponds to an image in the same order
 const poem1 = [
   'I\'ve been looking at photos of Guilin',
   'I found them when I scrolled through my feed.\nThey are from 2009.',
@@ -50,11 +40,6 @@ const poem1 = [
   'I don’t wish to go back',
 ];
 
-// ============================================
-// REPLACE POEM 2 HERE (18 lines total)
-// ============================================
-// These lines will be paired with images in REVERSE order
-// So poem2[0] will appear with images[17], poem2[1] with images[16], etc.
 const poem2 = [
   'there is a silent sacrilegious assailment these states have set up on me',
   ' always must wonder', 
@@ -77,18 +62,11 @@ const poem2 = [
 ];
 
 
-
-// ============================================
-// INTRO PAGE FUNCTIONALITY
-// ============================================
-
 const introPage = document.getElementById('introPage');
 const mainContent = document.getElementById('mainContent');
 const imageStack = document.getElementById('imageStack');
 
-// Create scattered image stack
 function createImageStack() {
-  // Random positions and rotations for scattered effect
   const positions = [
     { top: '50%', left: '30%', rotate: -12, zIndex: 1, delay: 0 },
     { top: '45%', left: '55%', rotate: 8, zIndex: 2, delay: 0.05 },
@@ -124,26 +102,19 @@ function createImageStack() {
   });
 }
 
-// Click to start with staggered fade
 imageStack.addEventListener('click', () => {
   introPage.classList.add('fade-out');
   mainContent.style.display = 'block';
   
-  // Wait for intro fade out to complete, then fade in main content
   setTimeout(() => {
     mainContent.classList.add('fade-in');
     updatePage();
   }, 400);
   
-  // Remove intro page from DOM after transition
   setTimeout(() => {
     introPage.style.display = 'none';
   }, 1400);
 });
-
-// ============================================
-// MAIN CODE (No need to modify below)
-// ============================================
 
 let currentPage = 0;
 let currentPoem = 1;
@@ -174,12 +145,10 @@ function getCurrentImages() {
   if (currentPoem === 1) {
     return images;
   } else {
-    // For poem 2: reverse, then replace image1 with image20 and image2 with image19
     let poem2Images = [...images].reverse();
     
-    // After reversing, image1 is at position 17 and image2 is at position 16
-    poem2Images[17] = 'images/image20.jpg';  // Replace image1 with image20
-    poem2Images[16] = 'images/image19.jpg';  // Replace image2 with image19
+    poem2Images[17] = 'images/image20.jpg'; 
+    poem2Images[16] = 'images/image19.jpg'; 
     
     return poem2Images;
   }
@@ -191,15 +160,12 @@ function updatePage() {
   const leftIndex = currentPage * 2;
   const rightIndex = currentPage * 2 + 1;
 
-  // Add fade transition
   container.classList.add('page-transition');
 
   setTimeout(() => {
-    // Update left card
     cards.left.querySelector('.card-image').src = currentImages[leftIndex];
     cards.left.querySelector('.poem-line').textContent = poem[leftIndex];
 
-    // Update right card
     if (rightIndex < currentImages.length) {
       cards.right.querySelector('.card-image').src = currentImages[rightIndex];
       cards.right.querySelector('.poem-line').textContent = poem[rightIndex];
@@ -208,19 +174,15 @@ function updatePage() {
       cards.right.style.opacity = '0';
     }
 
-    // Reset flipped state
     cards.left.classList.remove('flipped');
     cards.right.classList.remove('flipped');
     flippedCards = { left: false, right: false };
 
-    // Update navigation
     prevBtn.classList.toggle('disabled', currentPage === 0);
     nextBtn.classList.toggle('disabled', currentPage >= Math.floor(images.length / 2) - 1);
 
-    // Update page indicator
     pageIndicator.textContent = `${currentPage + 1} / ${Math.ceil(images.length / 2)}`;
 
-    // Remove transition class
     setTimeout(() => {
       container.classList.remove('page-transition');
     }, 50);
@@ -237,7 +199,6 @@ function addCollectedLine(line) {
   }
 }
 
-// Card flip interaction
 cards.left.addEventListener('click', (e) => {
   e.stopPropagation();
   cards.left.classList.toggle('flipped');
@@ -262,7 +223,6 @@ cards.right.addEventListener('click', (e) => {
   }
 });
 
-// Section click for navigation
 document.querySelector('[data-section="left"]').addEventListener('click', (e) => {
   if (e.target.closest('.card')) return;
   if (currentPage > 0) {
@@ -279,7 +239,6 @@ document.querySelector('[data-section="right"]').addEventListener('click', (e) =
   }
 });
 
-// Arrow navigation
 prevBtn.addEventListener('click', () => {
   if (currentPage > 0) {
     currentPage--;
@@ -294,7 +253,6 @@ nextBtn.addEventListener('click', () => {
   }
 });
 
-// Poem toggle with two buttons
 poem1Btn.addEventListener('click', () => {
   if (currentPoem !== 1) {
     currentPoem = 1;
@@ -323,7 +281,6 @@ poem2Btn.addEventListener('click', () => {
   }
 });
 
-// About button functionality
 aboutBtn.addEventListener('click', () => {
   aboutBtn.classList.toggle('active');
   aboutOverlay.classList.toggle('active');
@@ -334,7 +291,6 @@ closeAbout.addEventListener('click', () => {
   aboutOverlay.classList.remove('active');
 });
 
-// Close overlay when clicking outside the content
 aboutOverlay.addEventListener('click', (e) => {
   if (e.target === aboutOverlay) {
     aboutBtn.classList.remove('active');
@@ -342,7 +298,6 @@ aboutOverlay.addEventListener('click', (e) => {
   }
 });
 
-// Keyboard navigation
 document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowLeft' && currentPage > 0) {
     currentPage--;
@@ -353,5 +308,4 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Initialize intro page
 createImageStack();
